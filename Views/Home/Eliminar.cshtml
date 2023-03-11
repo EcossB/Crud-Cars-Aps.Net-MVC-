@@ -1,0 +1,58 @@
+﻿@model Segundo_parcial_CRUD.Models.Auto
+@{
+    ViewData["Title"] = "Eliminar";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h3 class="text-danger">Esta seguro de eliminar el vehiculo?</h3>
+<hr />
+<div class="row">
+    <div class="col-sm-4">
+
+        <form asp-action="Eliminar" asp-controller="Home" method="post">
+            <input type="hidden" asp-for="Idauto" /> <!--aqui le estoy diciendo que este texto solo funcionara para el id del auto-->
+            <!--Contenedor para la marca-->
+            <div class="mb-2">
+                <label class="form-label" asp-for="Marca"> Marca del Vehiculo</label>
+                <input class="form-control form-control-sm" asp-for="Marca" type="text" disabled/> <!-- el target de este imput es el campo marca de dbcontext -->
+            </div>
+
+            <!--Contenedor para la ruta-->
+            <div class="mb-2">
+                <label class="form-label" asp-for="ImgRuta"> Ruta de la imagen</label>
+                <input class="form-control form-control-sm" asp-for="ImgRuta" type="text" disabled /> <!-- el target de este imput es el campo marca de dbcontext -->
+            </div>
+
+            <img src="@Model.ImgRuta" />
+
+
+            <!--Contenedor para la modelo-->
+            <div class="mb-2">
+                <label class="form-label" asp-for="Modelo"> Modelo del Vehiculo</label>
+                <input class="form-control form-control-sm" asp-for="Modelo" type="text" disabled /> <!-- el target de este imput es el campo marca de dbcontext -->
+            </div>
+
+            <!--Contenedor para la ano-->
+            <div class="mb-2">
+                <label class="form-label" asp-for="Anio"> Ano del vehiculo</label>
+                <input class="form-control form-control-sm" asp-for="Anio" type="text" disabled /> <!-- el target de este imput es el campo marca de dbcontext -->
+            </div>
+
+            <!--para el estatus-->
+            <div class="mb-3">
+                <label class="form-label" asp-for="MiEstatus"> Estado del vehiculo</label>
+                <input class="form-control form-control-sm" asp-for="oEstatus.Descripcion" type="text" disabled /> <!-- el target de este imput es el campo marca de dbcontext -->
+
+            </div>
+
+            <div class="mb-2">
+
+                <button class="btn btn-danger btn-sm w-25 " type="submit"> Eliminar</button>
+                
+                <a class=" btn btn-dark btn-sm" asp-action="index" asp-controller="Home"> Volver</a>
+            </div>
+
+        </form>
+    </div>
+</div>
+

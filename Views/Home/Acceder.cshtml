@@ -1,0 +1,23 @@
+﻿@model Segundo_parcial_CRUD.Models.User;
+@{
+    ViewData["Title"] = "Acceder";
+    Layout = "~/Views/Shared/_Layout.cshtml";
+}
+
+<h1>Acceder</h1>
+
+<h1>login</h1>
+
+<div class="row">
+    <form asp-action="Acceder" asp-controller="Home">
+        <div class="col-lg-6 col-lg-offset-0">
+            Usuario
+            <input type="text" name="cuenta" />
+            Password
+            <input type="password" name="password" />
+            <input type="submit" class="btn btn-success" value="Entrar" />
+        </div>
+    </form>
+</div>
+
+
